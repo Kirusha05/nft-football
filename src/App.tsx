@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, Navigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { Footer, Header } from "./components";
+import { PageWrapper } from "./components/PageWrapper";
+import HomePage from "./pages/HomePage";
+import MintingPage from "./pages/MintingPage";
+
+import { GlobalStyles, darkTheme } from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyles />
+      <Header />
+      <PageWrapper>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/mint" element={<MintingPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </PageWrapper>
+      <Footer />
+    </ThemeProvider>
   );
 }
 

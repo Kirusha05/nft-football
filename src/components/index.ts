@@ -8,3 +8,4 @@ export { Team } from "./Team";
 export { Introduction } from "./Introduction";
 export { Footer } from "./Footer";
 export { MintSection } from "./MintSection";
+export { PageWrapper } from "./PageWrapper";

@@ -1,9 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Footer, Header } from "./components";
-import { PageWrapper } from "./components/PageWrapper";
-import HomePage from "./pages/HomePage";
-import MintingPage from "./pages/MintingPage";
+import { Footer, Header, PageWrapper } from "./components";
+import { HomePage, MintingPage } from "./pages";
 
 import { GlobalStyles, darkTheme } from "./theme";
 
